@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Google AI Cleaner",
+  "version": "1.0",
+  "description": "A Google Chrome extension that cleans up the DOM in 'google.com/ai' chats",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*//*",
+        "https://*.google.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
